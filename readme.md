@@ -21,8 +21,7 @@ git clone <your-repo-url>
 cd <your-repo-folder>
 ```
 
-2. **Clone the repository**
-Choose a database and execute the migration script:
+2. **Choose a database and execute the migration script:**
 ```
 database/migration.sql
 ```
