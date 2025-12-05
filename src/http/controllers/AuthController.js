@@ -9,14 +9,14 @@ export const AuthController = {
 
       const hashed = await bcrypt.hash(password, 10);
 
-      const [updateRes] = await db.query(
+      const [inserRes] = await db.query(
         "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
         [name, email, hashed]
       );
 
       const [result] = await db.query(
         "SELECT * FROM users WHERE id = ?",
-        updateRes.insertId
+        inserRes.insertId
       );
 
       if (result === 0) {
