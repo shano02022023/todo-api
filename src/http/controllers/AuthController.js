@@ -7,10 +7,6 @@ export const AuthController = {
     try {
       const { name, email, password } = req.body;
 
-      if (!name || !email || !password) {
-        return res.status(400).json({ message: "All fields are required." });
-      }
-
       const hashed = await bcrypt.hash(password, 10);
 
       const [updateRes] = await db.query(
